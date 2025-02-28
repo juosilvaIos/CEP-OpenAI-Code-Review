@@ -1,6 +1,6 @@
 {
     "manifestVersion": 1,
-    "id": "oaicr",
+    "id": "cep_oaicr",
     "version": "1.0.0",
     "name": "Open AI Code Review",
     "publisher": "juosilvaIos",
