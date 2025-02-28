@@ -4,6 +4,7 @@ import { ChatGPT } from './chatgpt';
 import { Repository } from './repository';
 import { PullRequest } from './pullrequest';
 
+
 export class Main {
     private static _chatGpt: ChatGPT;
     private static _repository: Repository;

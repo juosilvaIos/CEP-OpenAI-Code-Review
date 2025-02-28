@@ -3,7 +3,7 @@
     "id": "oaicr",
     "version": "1.0.0",
     "name": "Open AI Code Review",
-    "publisher": "AidanCole",
+    "publisher": "juosilvaIos",
     "public": true,
     "targets": [
         {
@@ -36,13 +36,13 @@
     },
     "links": {
         "support": {
-            "uri": "https://github.com/a1dancole/openai-code-review/issues/new?assignees=&labels=bug&template=bug_report.md&title=",
+            "uri": "https://github.com/juosilvaIos/CEP-openai-code-review/issues/new?assignees=&labels=bug&template=bug_report.md&title=",
             "version": "1.0.0"
         }
     },
     "repository": {
         "type": "git",
-        "uri": "https://github.com/a1dancole/OpenAI-Code-Review"
+        "uri": "https://github.com/juosilvaIos/CEP-OpenAI-Code-Review"
     },
     "screenshots": [
         {

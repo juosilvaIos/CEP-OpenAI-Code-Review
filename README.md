@@ -67,11 +67,11 @@ A: Build Administrators must be given "Contribute to pull requests" access. Chec
 
 ### Bug Reports
 
-If you find a bug or unexpected behavior, please [open a bug report](https://github.com/a1dancole/openai-code-review/issues/new?assignees=&labels=bug&template=bug_report.md&title=).
+If you find a bug or unexpected behavior, please [open a bug report](https://github.com/juosilvaIos/CEP-openai-code-review/issues/new?assignees=&labels=bug&template=bug_report.md&title=).
 
 ### Feature Requests
 
-If you have ideas for new features or enhancements, please [submit a feature request](https://github.com/a1dancole/openai-code-review/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=).
+If you have ideas for new features or enhancements, please [submit a feature request](https://github.com/juosilvaIos/CEP-openai-code-review/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=).
 
 ## License
 

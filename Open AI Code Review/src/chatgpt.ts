@@ -37,7 +37,8 @@ export class ChatGPT {
             | 'gpt-3.5-turbo-16k'
             | 'gpt-3.5-turbo-0301'
             | 'gpt-3.5-turbo-0613'
-            | 'gpt-3.5-turbo-16k-0613';
+            | 'gpt-3.5-turbo-16k-0613'
+            | 'GPT‑4o mini';
 
         if (!this.doesMessageExceedTokenLimit(diff + this.systemMessage, 4097)) {
             let openAi = await this._openAi.chat.completions.create({

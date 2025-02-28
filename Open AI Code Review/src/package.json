@@ -12,7 +12,7 @@
   "dependencies": {
     "@dqbd/tiktoken": "^1.0.7",
     "azure-devops-extension-sdk": "^4.0.2",
-    "azure-pipelines-task-lib": "^4.7.0",
+    "azure-pipelines-task-lib": "^4.17.3",
     "gpt-tokenizer": "^2.1.2",
     "openai": "^4.20.1",
     "simple-git": "^3.21.0"
