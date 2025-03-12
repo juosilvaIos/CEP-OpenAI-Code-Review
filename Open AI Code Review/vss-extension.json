@@ -1,9 +1,9 @@
 {
     "manifestVersion": 1,
-    "id": "cepoaicr",
-    "version": "1.0.0",
-    "name": "Open AI Code Review",
-    "publisher": "juosilvaIos",
+    "id": "JulioOSilva",
+    "version": "1.0.13",
+    "name": "Open AI Code Review CEPEDI",
+    "publisher": "JulioOSilva",
     "public": true,
     "targets": [
         {
@@ -37,7 +37,7 @@
     "links": {
         "support": {
             "uri": "https://github.com/juosilvaIos/CEP-openai-code-review/issues/new?assignees=&labels=bug&template=bug_report.md&title=",
-            "version": "1.0.0"
+            "version": "1.0.7"
         }
     },
     "repository": {

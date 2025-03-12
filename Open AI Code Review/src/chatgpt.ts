@@ -24,23 +24,20 @@ export class ChatGPT {
     public async PerformCodeReview(diff: string, fileName: string): Promise<string> {
 
         let model = tl.getInput('ai_model', true) as | (string & {})
-            | 'gpt-4-1106-preview'
-            | 'gpt-4-vision-preview'
-            | 'gpt-4'
-            | 'gpt-4-0314'
-            | 'gpt-4-0613'
-            | 'gpt-4-32k'
-            | 'gpt-4-32k-0314'
-            | 'gpt-4-32k-0613'
-            | 'gpt-3.5-turbo-1106'
+            | 'gpt-4o-mini'
+            | 'o3-mini'
+            | 'o1-mini'
+            | 'gpt-4o'
             | 'gpt-3.5-turbo'
-            | 'gpt-3.5-turbo-16k'
-            | 'gpt-3.5-turbo-0301'
-            | 'gpt-3.5-turbo-0613'
-            | 'gpt-3.5-turbo-16k-0613'
-            | 'GPT‑4o mini';
+            | 'gpt-4-turbo'
+            | 'gpt-4'
+            | 'o1';
 
-        if (!this.doesMessageExceedTokenLimit(diff + this.systemMessage, 4097)) {
+        let maxTokens = parseInt(tl.getInput('ai_model_MaxTokens', true) as string)
+        let temperature = parseFloat(tl.getInput('ai_model_Temp', true)  as string)
+        let topP = parseFloat(tl.getInput('ai_model_TopP', true)  as string)
+
+        if (!this.doesMessageExceedTokenLimit(diff + this.systemMessage, maxTokens)) {
             let openAi = await this._openAi.chat.completions.create({
                 messages: [
                     {
@@ -51,12 +48,17 @@ export class ChatGPT {
                         role: 'user',
                         content: diff
                     }
-                ], model: model
+                ], model: model, max_tokens: maxTokens, temperature: temperature, top_p: topP
             });
 
             let response = openAi.choices;
-
+            console.info("Tudo do retorno: ");
+            console.info(openAi);
+            console.info("Somente o choices: ");
+            console.info(response);
+            
             if (response.length > 0) {
+            
                 return response[0].message.content!;
             }
         }

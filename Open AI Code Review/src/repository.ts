@@ -31,10 +31,21 @@ export class Repository {
             filesToReview = filesToReview.filter(file => fileExtensionsToInclude.includes(file.substring(file.lastIndexOf('.'))));
         }
 
-        if(filesToExclude) {
-            let fileNamesToExclude = filesToExclude.trim().split(',')
-            filesToReview = filesToReview.filter(file => !fileNamesToExclude.includes(file.split('/').pop()!.trim()))
-        }
+        if (filesToExclude) {
+            let fileNamesToExclude = filesToExclude.trim().split(',');
+            filesToReview = filesToReview.filter((pathFile) => {
+              const file = pathFile.split('/').pop()!.trim(); //remove o caminho, pegando apenas o nome e extensão do arquivo
+              let notIncludeFile = false;
+              fileNamesToExclude.forEach((fileToExclude) => {
+                if (file.includes(fileToExclude)) {
+                  notIncludeFile = true;
+                }
+              });
+              if (!notIncludeFile) {
+                return file;
+              }
+            });
+          }
 
         return filesToReview;
     }

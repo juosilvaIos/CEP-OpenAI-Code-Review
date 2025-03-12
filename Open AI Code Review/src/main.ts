@@ -36,6 +36,11 @@ export class Main {
 
         tl.setProgress(0, 'Performing Code Review');
 
+        const max = tl.getInput('ai_model_MaxTokens')
+        const temp = tl.getInput('ai_model_Temp')
+        const topP = tl.getInput('ai_model_TopP')
+        console.info(`Julio testando impressão de informações do código: ${max} - ${temp} - ${topP}`)
+
         for (let index = 0; index < filesToReview.length; index++) {
             const fileToReview = filesToReview[index];
             let diff = await this._repository.GetDiff(fileToReview);
@@ -43,9 +48,11 @@ export class Main {
 
             if(review.indexOf('NO_COMMENT') < 0) {
                 await this._pullRequest.AddComment(fileToReview, review);
+                console.log(review)
             }
 
-            console.info(`Completed review of file ${fileToReview}`)
+            console.info(`Julio - Completed review of file ${fileToReview}`)
+            
 
             tl.setProgress((fileToReview.length / 100) * index, 'Performing Code Review');
         }
