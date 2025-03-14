@@ -18,7 +18,7 @@ export class PullRequest {
 
     public async AddComment(fileName: string, comment: string): Promise<boolean> {
 
-        console.info(`Comment added to ${fileName}`);
+        console.info(`>==> Comment added to ${fileName}`);
 
         if (!fileName.startsWith('/')) {
             fileName = `/${fileName}`;

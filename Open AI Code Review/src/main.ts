@@ -39,7 +39,8 @@ export class Main {
         const max = tl.getInput('ai_model_MaxTokens')
         const temp = tl.getInput('ai_model_Temp')
         const topP = tl.getInput('ai_model_TopP')
-        console.info(`Julio testando impressão de informações do código: ${max} - ${temp} - ${topP}`)
+        console.info(`Simulation parameters: MaxTokens: ${max} - Temperature: ${temp} - TopP: ${topP}`)
+        console.info(`------------------------------------------------------------------------------`)
 
         for (let index = 0; index < filesToReview.length; index++) {
             const fileToReview = filesToReview[index];
@@ -47,11 +48,17 @@ export class Main {
             let review = await this._chatGpt.PerformCodeReview(diff, fileToReview);
 
             if(review.indexOf('NO_COMMENT') < 0) {
-                await this._pullRequest.AddComment(fileToReview, review);
-                console.log(review)
+                // console.info(`Resposta do GPT: ${review}`);
+                const reviews = review.split('$$$')
+                // console.info(`Splits do GPT: ${reviews}`);
+                reviews.forEach(async reviewSplit =>{
+                    if(reviewSplit.length > 0)
+                        await this._pullRequest.AddComment(fileToReview, reviewSplit);
+                })
+                
             }
 
-            console.info(`Julio - Completed review of file ${fileToReview}`)
+            console.info(`Completed review of file ${fileToReview}`)
             
 
             tl.setProgress((fileToReview.length / 100) * index, 'Performing Code Review');

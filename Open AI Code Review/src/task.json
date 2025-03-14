@@ -1,15 +1,15 @@
 {
     "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
-    "id": "0e710093-7b61-4d04-b15a-eac68a6d311d",
+    "id": "0e710094-7b61-4d04-b15a-eac68a6d311d",
     "name": "OpenAICodeReviewCepedi",
     "friendlyName": "Open AI Code Review - CEPEDI",
-    "description": "Complete a Code Review using Open AI-CEPEDI",
+    "description": "Complete a Code Review using Open AI CEPEDI",
     "category": "Utility",
-    "author": "juosilvaIosadapt de Aidan Cole",
+    "author": "juosilvaIos extension adapted from Aidan Cole",
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 0
+        "Patch": 27
     },
     "instanceNameFormat": "Open AI Code Review CEPEDI $(message)",
     "inputs": [
